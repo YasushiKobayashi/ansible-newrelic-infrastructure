@@ -5,8 +5,8 @@
     path: /etc/newrelic-infra.yml
     owner: root
     group: root
-    state: file
     mode: 0644
+    state: touch
 
 - name: set api key
   lineinfile:
