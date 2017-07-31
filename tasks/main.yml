@@ -1,5 +1,12 @@
 ---
 
+- name: sey
+  file:
+    path: /etc/newrelic-infra.yml
+    owner: root
+    group: root
+    mode: 0644
+
 - name: set api key
   lineinfile:
     dest: /etc/newrelic-infra.yml
