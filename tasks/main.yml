@@ -14,7 +14,7 @@
     line: 'license_key:{{ newrelic_api_key  }}'
 
 - name: install makecache
-  yum: name=makecache enablerepo=newrelic-infra
+  yum: name=makecache enablerepo=newrelic-infra disablerepo=
 
 - name: install newrelic-infra
   yum: name=newrelic-infra
