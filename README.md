@@ -1,12 +1,9 @@
-[![Build Status](https://travis-ci.org/YasushiKobayashi/newrelic-php.svg?branch=master)](https://travis-ci.org/YasushiKobayashi/newrelic-php)
-[![Run Status](https://api.shippable.com/projects/59749c876b05110700b0064c/badge?branch=null)](https://app.shippable.com/github/YasushiKobayashi/newrelic-php)
-[![Coverage Badge](https://api.shippable.com/projects/59749c876b05110700b0064c/coverageBadge?branch=null)](https://app.shippable.com/github/YasushiKobayashi/newrelic-php)
+[![Build Status](https://travis-ci.org/YasushiKobayashi/ansible-newrelic-infrastructure.svg?branch=master)](https://travis-ci.org/YasushiKobayashi/ansible-newrelic-infrastructure)
+[![Run Status](https://api.shippable.com/projects/597f4e56fbcada0700603726/badge?branch=null)](https://app.shippable.com/github/YasushiKobayashi/ansible-newrelic-infrastructure)
+[![Coverage Badge](https://api.shippable.com/projects/597f4e56fbcada0700603726/coverageBadge?branch=null)](https://app.shippable.com/github/YasushiKobayashi/ansible-newrelic-infrastructure)
 
 ### install
-`ansible-galaxy install YasushiKobayashi.newrelic-php`
-
-### pre install
-`ansible-galaxy install YasushiKobayashi.newrelic`
+`ansible-galaxy install YasushiKobayashi.newrelic-infrastructure`
 
 ### ansible role install newrelic
 - cenos6
@@ -16,8 +13,4 @@
 ```yml
 vars:
   newrelic_api_key: xxx
-  newrelic_app_name: xxx
 ```
-
-### end
-restart your web server
