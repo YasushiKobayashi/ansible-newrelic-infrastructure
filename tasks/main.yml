@@ -1,15 +1,19 @@
 ---
 
-- name: fix bashrc
+- name: set api key
   lineinfile:
     dest: /etc/newrelic-infra.yml
-    state: present
     regexp: 'license_key:'
     line: 'license_key:{{ newrelic_api_key  }}'
 
-- name: yum install enablerepo=newrelic-infra disablerepo=*
-  yum: name=newrelic-php5
+- name: set repo
+  get_url:
+    url: https://download.newrelic.com/infrastructure_agent/linux/yum/el/6/x86_64/newrelic-infra.repo
+    dest: /etc/yum.repos.d/newrelic-infra.repo
+    mode: 0755
 
+- name: install makecache
+  yum: name=makecache enablerepo=newrelic-infra disablerepo=*
 
-- name: yum install
+- name: install newrelic-infra
   yum: name=newrelic-infra
