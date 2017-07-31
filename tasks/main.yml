@@ -1,0 +1,15 @@
+---
+
+- name: fix bashrc
+  lineinfile:
+    dest: /etc/newrelic-infra.yml
+    state: present
+    regexp: 'license_key:'
+    line: 'license_key:{{ newrelic_api_key  }}'
+
+- name: yum install enablerepo=newrelic-infra disablerepo=*
+  yum: name=newrelic-php5
+
+
+- name: yum install
+  yum: name=newrelic-infra
