@@ -11,7 +11,7 @@
   lineinfile:
     dest: /etc/newrelic-infra.yml
     regexp: 'license_key:'
-    line: 'license_key:{{ newrelic_api_key  }}'
+    line: 'license_key: {{ newrelic_api_key  }}'
 
 - name: set repo
   get_url:
