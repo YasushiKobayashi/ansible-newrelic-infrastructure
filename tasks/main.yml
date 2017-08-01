@@ -13,8 +13,13 @@
     regexp: 'license_key:'
     line: 'license_key:{{ newrelic_api_key  }}'
 
+- name: set repo
+  get_url:
+    url: https://download.newrelic.com/infrastructure_agent/linux/yum/el/6/x86_64/newrelic-infra.repo
+    dest: /etc/yum.repos.d/newrelic-infra.repo
+
 - name: install makecache
-  yum: name=makecache enablerepo=newrelic-infra disablerepo=*
+  command: yum -q makecache -y --disablerepo='*' --enablerepo='newrelic-infra'
 
 - name: install newrelic-infra
   yum: name=newrelic-infra
